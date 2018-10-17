@@ -12,6 +12,7 @@
 public class Picture
 {
     private Square wall;
+    private Square ces;
     private Square window;
     private Triangle roof;
     private Circle sun;
@@ -35,6 +36,13 @@ public class Picture
         wall.changeSize(120);
         wall.makeVisible();
         
+        ces = new Square();
+        ces.changeColor("green");
+        ces.moveHorizontal(-320);
+        ces.moveVertical(130);
+        ces.changeSize(800);
+        ces.makeVisible();
+        
         window = new Square();
         window.changeColor("black");
         window.moveHorizontal(-120);
@@ -51,9 +59,10 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(100);
         sun.changeSize(80);
         sun.makeVisible();
+        sun.slowMoveVertical(-180);
     }
 
     /**
@@ -64,6 +73,7 @@ public class Picture
         if (wall != null)   // only if it's painted already...
         {
             wall.changeColor("black");
+            ces.changeColor("green");
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
@@ -78,6 +88,7 @@ public class Picture
         if (wall != null)   // only if it's painted already...
         {
             wall.changeColor("red");
+            ces.changeColor("green");
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
